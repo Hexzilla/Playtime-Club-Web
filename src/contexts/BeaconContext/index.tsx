@@ -44,6 +44,7 @@ export const BeaconProvider: React.FC<{ children: ReactNode }> = ({
     setTezos(new TezosToolkit(rpcUrl));
   }, [rpcUrl]);
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     (async () => {
       if (wallet) {
