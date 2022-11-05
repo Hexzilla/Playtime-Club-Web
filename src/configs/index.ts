@@ -1,6 +1,6 @@
 import { NetworkType } from "@airgap/beacon-sdk";
 
-export const API_BASE_URL = "https://playtime-club.herokuapp.com";
+export const BaseUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 export const Admin = "tz1bxwduvRwBhq59FmThGKD5ceDFadr57JTq";
 
