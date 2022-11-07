@@ -7,7 +7,7 @@ import { io } from 'socket.io-client';
 import useInterval from 'hooks/useInterval';
 import { BaseUrl } from 'configs';
 import { RootState } from 'store';
-import { setLoading, setPlayerId } from 'slices/play';
+import { setLoading, setConnected, setPlayerId } from 'slices/play';
 import TezosBoard from '../../components/play/playtime-tezos';
 //import SolanaBoard from '../../components/play/playtime-solana';
 
@@ -31,6 +31,8 @@ const Play = () => {
   useEffect(() => {
     socket.on('connect', () => {
       console.log('connected');
+      toast.success('Connected server');
+      dispatch(setConnected(true));
       dispatch(setLoading(false));
     });
 
