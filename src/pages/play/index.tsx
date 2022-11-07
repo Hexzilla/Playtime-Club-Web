@@ -33,12 +33,11 @@ const Play = () => {
       console.log('connected');
       toast.success('Connected server');
       dispatch(setConnected(true));
-      dispatch(setLoading(false));
     });
 
     socket.on('disconnect', () => {
       console.log('disconnected');
-      dispatch(setLoading(false));
+      dispatch(setConnected(false));
     });
 
     socket.on('PONG', () => {
